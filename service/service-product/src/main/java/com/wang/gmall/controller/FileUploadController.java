@@ -27,7 +27,7 @@ public class FileUploadController {
     public Result fileUpload(MultipartFile file) {
 
         String path = this.getClass().getResource("/tracker.conf").getPath();
-
+        String resultPath = null;
         //初始化
         try {
             ClientGlobal.init(path);
@@ -44,9 +44,10 @@ public class FileUploadController {
             int lastIndexOf = originalFilename.lastIndexOf(".");
             String extName = originalFilename.substring(lastIndexOf);
 
-            String resultPath = storageClient1.upload_appender_file1(file.getBytes(), extName, null);
+            resultPath = storageClient1.upload_appender_file1(file.getBytes(), extName, null);
 
-            fileUrl += resultPath;
+
+            resultPath = fileUrl + resultPath;
 
 
         } catch (Exception e) {
@@ -54,6 +55,6 @@ public class FileUploadController {
         }
 
 
-        return Result.ok(fileUrl);
+        return Result.ok(resultPath);
     }
 }
