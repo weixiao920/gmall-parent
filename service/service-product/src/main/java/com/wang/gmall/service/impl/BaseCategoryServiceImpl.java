@@ -29,8 +29,10 @@ public class BaseCategoryServiceImpl implements BaseCategoryService {
     @Autowired
     private BaseCategory3Mapper category3Mapper;
 
+
     @Override
     public List<BaseCategory1> getCategory1() {
+        //获取一级分类
         return category1Mapper.selectList(null);
     }
 
@@ -38,7 +40,7 @@ public class BaseCategoryServiceImpl implements BaseCategoryService {
     public List<BaseCategory2> getCategory2(String category1Id) {
         QueryWrapper<BaseCategory2> category2QueryWrapper = new QueryWrapper<>();
         category2QueryWrapper.eq("category1_id",category1Id);
-
+        //获取二级分类
         return category2Mapper.selectList(category2QueryWrapper);
     }
 
@@ -46,7 +48,7 @@ public class BaseCategoryServiceImpl implements BaseCategoryService {
     public List<BaseCategory3> getCategory3(String category2Id) {
         QueryWrapper<BaseCategory3> category3QueryWrapper = new QueryWrapper<>();
         category3QueryWrapper.eq("category2_id",category2Id);
-
+        //获取三级分类
         return category3Mapper.selectList(category3QueryWrapper);
     }
 }
