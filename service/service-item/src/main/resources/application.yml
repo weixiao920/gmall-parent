@@ -1,0 +1,27 @@
+server:
+  port: 8202
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.239.138:3306/gmall_product?characterEncoding=utf-8&useSSL=false
+
+  application:
+    name: service-item
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.239.138:8848
+
+#设置feign连接超时时间
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 30000
+        connectTimeout: 30000
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
