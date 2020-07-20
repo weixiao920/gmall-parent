@@ -3,14 +3,10 @@ package com.wang.gmall.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wang.gmall.model.product.SkuInfo;
-import com.wang.gmall.model.product.SpuImage;
-import com.wang.gmall.model.product.SpuSaleAttr;
 import com.wang.gmall.result.Result;
 import com.wang.gmall.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author 微笑
