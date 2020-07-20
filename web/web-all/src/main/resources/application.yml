@@ -1,0 +1,28 @@
+server:
+  port: 8300
+
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+
+  application:
+    name: web-all
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.239.138:8848
+
+#设置feign连接超时时间
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 30000
+        connectTimeout: 30000
+
+
+
+
+
