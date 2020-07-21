@@ -8,5 +8,10 @@ import java.util.Map;
  */
 public interface ItemService {
 
+    /**
+     * 获取商品详细信息
+     * @param skuId
+     * @return
+     */
     Map<String, Object> getItem(Long skuId);
 }
