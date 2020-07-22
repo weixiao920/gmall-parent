@@ -14,6 +14,10 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.239.138:8848
+  redis:
+    host: 192.168.239.168
+    port: 6379
+    database: 0
 
 #设置feign连接超时时间
 feign:
@@ -25,3 +29,5 @@ feign:
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
+
+#redis
